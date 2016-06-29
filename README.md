@@ -1,9 +1,9 @@
-[![Build Status](https://travis-ci.org/innowatio/iwwa-lambda-sensors-aggregator.svg?branch=master)](https://travis-ci.org/innowatio/iwwa-lambda-sensors-aggregator)
-[![Dependency Status](https://david-dm.org/innowatio/iwwa-lambda-sensors-aggregator.svg)](https://david-dm.org/innowatio/iwwa-lambda-sensors-aggregator)
-[![devDependency Status](https://david-dm.org/innowatio/iwwa-lambda-sensors-aggregator/dev-status.svg)](https://david-dm.org/innowatio/iwwa-lambda-sensors-aggregator#info=devDependencies)
-[![codecov.io](https://codecov.io/github/innowatio/iwwa-lambda-sensors-aggregator/coverage.svg?branch=master)](https://codecov.io/github/innowatio/iwwa-lambda-sensors-aggregator?branch=master)
+[![Build Status](https://travis-ci.org/innowatio/iwwa-lambda-standard-aggregator.svg?branch=master)](https://travis-ci.org/innowatio/iwwa-lambda-standard-aggregator)
+[![Dependency Status](https://david-dm.org/innowatio/iwwa-lambda-standard-aggregator.svg)](https://david-dm.org/innowatio/iwwa-lambda-standard-aggregator)
+[![devDependency Status](https://david-dm.org/innowatio/iwwa-lambda-standard-aggregator/dev-status.svg)](https://david-dm.org/innowatio/iwwa-lambda-standard-aggregator#info=devDependencies)
+[![codecov.io](https://codecov.io/github/innowatio/iwwa-lambda-standard-aggregator/coverage.svg?branch=master)](https://codecov.io/github/innowatio/iwwa-lambda-standard-aggregator?branch=master)
 
-# iwwa-lambda-sensors-aggregator
+# iwwa-lambda-standard-aggregator
 
 Lambda function for sensors aggregation
 
@@ -29,6 +29,10 @@ are kept secret).
 
 ### Configuration
 
+#### Add new collections
+Edit the `src/config.js` file and append the new collection name in the `COLLECTIONS` array.
+
+#### Environment variables
 The following environment variables are needed to configure the function:
 
 - `MONGODB_URL`
