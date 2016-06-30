@@ -8,4 +8,4 @@ export const ACTION_UPDATE = "update";
 export const ACTION_DELETE = "delete";
 
 // put all your collections here
-export const COLLECTIONS = ["meter-report", "sensors"];
+export const COLLECTIONS = ["favorite-charts", "meter-reports", "sensors"];
