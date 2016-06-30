@@ -1,5 +1,5 @@
 import router from "kinesis-router";
-import {merge, partialRight} from "ramda";
+import {mergeAll, partialRight} from "ramda";
 
 import {ACTION_INSERT, ACTION_UPDATE, ACTION_DELETE, COLLECTIONS} from "./config";
 
@@ -21,7 +21,8 @@ const getEventActions = (eventType) => {
 };
 
 export default function getRoutes (action) {
-    var allActions = merge(...COLLECTIONS.map(eventType => getEventActions(eventType)));
+    var allActions = mergeAll(COLLECTIONS.map(eventType => getEventActions(eventType)));
+
     var finalRouter = router();
     Object.keys(allActions).forEach(
         (key) => {
