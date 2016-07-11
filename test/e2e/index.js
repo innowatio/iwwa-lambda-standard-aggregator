@@ -3,7 +3,7 @@ import {merge} from "ramda";
 import * as sinon from "sinon";
 
 import {handler} from "index";
-import mongodb from "services/mongodb";
+import {mongodb} from "services/mongodb";
 import {run, getEventFromObject} from "../mocks";
 
 const aSensor = {
