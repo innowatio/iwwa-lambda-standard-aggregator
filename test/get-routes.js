@@ -14,7 +14,10 @@ describe("getRoutes", () => {
             "element removed in collection meter-reports",
             "element inserted in collection sensors",
             "element replaced in collection sensors",
-            "element removed in collection sensors"];
+            "element removed in collection sensors",
+            "element inserted in collection user-interactions",
+            "element replaced in collection user-interactions",
+            "element removed in collection user-interactions"];
 
         expect(Object.keys(router.routes)).to.deep.equals(expectedRoutes);
     });
