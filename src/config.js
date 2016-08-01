@@ -2,10 +2,10 @@ import dotenv from "dotenv";
 
 dotenv.load();
 
-export const MONGODB_URL = process.env.MONGODB_URL;
+export const MONGODB_URL = process.env.MONGODB_URL || "mongodb://localhost:27017/test";
 export const ACTION_INSERT = "insert";
 export const ACTION_UPDATE = "update";
 export const ACTION_DELETE = "delete";
 
 // put all your collections here
-export const COLLECTIONS = ["favorite-charts", "meter-reports", "sensors", "user-interactions"];
+export const COLLECTIONS = ["favorite-charts", "meter-reports", "sensors", "user-interactions", "answers", "questions"];
