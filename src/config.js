@@ -13,5 +13,6 @@ export const COLLECTIONS = [
     "meter-reports",
     "sensors",
     "user-interactions",
-    "questions"
+    "questions",
+    "emails"
 ];
