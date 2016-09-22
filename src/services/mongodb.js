@@ -2,22 +2,27 @@ import {MongoClient} from "mongodb";
 
 import {MONGODB_URL} from "../config";
 
-export const mongodb = MongoClient.connect(MONGODB_URL, {
-    replSet: {socketOptions: {keepAlive: 1, connectTimeoutMS: 30000}}
-});
+var mongoClientInstance;
 
-export const upsert = async function upsert (collectionName, sensor, id) {
-    const db = await mongodb;
-    return db.collection(collectionName).update(
+export async function getMongoClient () {
+    if (!mongoClientInstance) {
+        mongoClientInstance = await MongoClient.connect(MONGODB_URL);
+    }
+    return mongoClientInstance;
+}
+
+export const upsert = async function upsert (collectionName, element, id) {
+    const db = await getMongoClient();
+    await db.collection(collectionName).update(
         {_id: id},
-        {$set: sensor},
+        {$set: element},
         {upsert: true}
     );
 };
 
 export const logicalDelete = async function logicalDelete (collectionName, id) {
-    const db = await mongodb;
-    return db.collection(collectionName).update(
+    const db = await getMongoClient();
+    await db.collection(collectionName).update(
         {_id: id},
         {$set: {isDeleted: true}}
     );

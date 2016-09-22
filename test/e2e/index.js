@@ -3,7 +3,7 @@ import {merge} from "ramda";
 import * as sinon from "sinon";
 
 import {handler} from "index";
-import {mongodb} from "services/mongodb";
+import {getMongoClient} from "services/mongodb";
 import {run, getEventFromObject} from "../mocks";
 
 const aSensor = {
@@ -24,7 +24,7 @@ describe("On sensor event", () => {
     const now = new Date("2016-01-15").getTime();
 
     before(async () => {
-        db = await mongodb;
+        db = await getMongoClient();
         sensorsCollection = db.collection(SENSORS_COLLECTION_NAME);
     });
 
