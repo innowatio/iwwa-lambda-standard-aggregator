@@ -1,7 +1,9 @@
+import log from "services/logger";
 import {logicalDelete, upsert} from "./services/mongodb";
 import {ACTION_INSERT, ACTION_UPDATE, ACTION_DELETE} from "./config";
 
 export default async function pipeline (event, action, collection) {
+    log.info(event);
     var element = event.data.element || {};
     const id = event.data.id;
     if (!id) {
