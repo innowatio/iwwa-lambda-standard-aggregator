@@ -9,10 +9,11 @@ export const ACTION_DELETE = "delete";
 
 // put all your collections here
 export const COLLECTIONS = [
+    "emails",
     "favorite-charts",
+    "groups",
     "meter-reports",
-    "sensors",
-    "user-interactions",
     "questions",
-    "emails"
+    "sensors",
+    "user-interactions"
 ];
