@@ -9,6 +9,7 @@ export const ACTION_DELETE = "delete";
 
 // put all your collections here
 export const COLLECTIONS = [
+    "alarms",
     "emails",
     "favorite-charts",
     "groups",
